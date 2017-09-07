@@ -1,0 +1,29 @@
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-3 text-center">{{city.location.name}}</h1>
+
+    <p class="lead text-center">{{city.location.country}}</p>
+
+  </div>
+</div>
+
+<div class="container">
+ <div class="row">    
+<div class="col-md-4 text-center" *ngFor="let city of city.forecast.forecastday">
+ <!-- | paginate: aginate: { itemsPerPage: 10, currentPage: p }"> --> 
+<div class="card" >
+  <img class="card-img-top" src="{{city.day.condition.icon}}" alt="Card image cap">
+  <div class="card-body">
+    <h4 class="card-title">Date: {{city.date}}</h4>
+    <p class="card-text">Max. Temp.: {{city.day.maxtemp_c}}&deg;C</p>
+    <p class="card-text">Min. Temp.: {{city.day.mintemp_c}}&deg;C</p>
+    <p class="card-text">{{city.day.condition.text}}</p>
+<button  class="btn btn-outline-success my-2 my-sm-0" type="button"(click)="saveData(city)">Add to Favourites</button>
+    <!-- <button class="btn btn-danger">Save</button> -->
+    </div>
+</div> 
+</div>
+<!-- <pagination-controls (pageChange)="p = $event"></pagination-controls> -->
+</div>
+</div>
