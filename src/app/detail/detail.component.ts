@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Input, Output } from '@angular/core';
+import { AddService } from '../add.service'
 
 @Component({
   selector: 'app-detail',
@@ -7,9 +8,37 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetailComponent implements OnInit {
 
-  constructor() { }
+/*  @Output() receive = new EventEmitter<string>();*/
 
-  ngOnInit() {
+ dat:any;
+  city:any={};
+  constructor(private add: AddService) { }
+
+   show() {
+    this.add.showData()
+    .subscribe(res=>{
+      this.city=res
+console.log(this.city)
+    })
+  }
+
+/*   edit(data:any) {
+    this.add.editData(data,dat)
+    .subscribe(res=>{
+      this.dat=res
+console.log(this.dat)
+    })
+  }*/
+
+   delete(data:any) {
+    this.add.deleteedata(data)
+    .subscribe(res=>{
+      this.city=res
+console.log(this.city)
+    })
+  }
+
+ ngOnInit() {
   }
 
 }

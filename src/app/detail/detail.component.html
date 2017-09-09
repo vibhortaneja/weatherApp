@@ -1,3 +1,13 @@
-<p>
-  detail works!
-</p>
+<button class="btn btn-danger ml-2" (click)="show()">Show All</button>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 text-center" *ngFor="let data of city">
+      <h2>{{data.date}}</h2>
+      <h2>{{data.mintemp_c}}</h2>
+      <h2>{{data.maxtemp_c}}</h2>
+      <h2>{{data.condition}}</h2>
+      <!-- <button class="btn btn-danger ml-2" (click)="edit(data)">Edit</button> -->
+      <button class="btn btn-danger ml-2" (click)="delete(data)">Delete</button>
+    </div>
+  </div>
+</div>

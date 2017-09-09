@@ -19,7 +19,7 @@ export class SearchComponent{
   		this.search.getData(city)
   		.subscribe(data=>{
   			this.city=data;
-        console.log(this.city)
+        //console.log(this.city)
   			this.receive.emit(this.city);
   		})
   	
