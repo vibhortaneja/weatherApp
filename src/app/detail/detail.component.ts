@@ -4,7 +4,8 @@ import { AddService } from '../add.service'
 @Component({
   selector: 'app-detail',
   templateUrl: './detail.component.html',
-  styleUrls: ['./detail.component.css']
+  styleUrls: ['./detail.component.css'],
+  providers:[AddService]
 })
 export class DetailComponent implements OnInit {
 
@@ -14,13 +15,13 @@ export class DetailComponent implements OnInit {
   city:any={};
   constructor(private add: AddService) { }
 
-   show() {
-    this.add.showData()
-    .subscribe(res=>{
-      this.city=res
-console.log(this.city)
-    })
-  }
+ //   show() {
+ //    this.add.showData()
+ //     .subscribe(res=>{
+ //      this.city=res
+ // console.log(this.city)
+ //    })
+ //   }
 
 /*   edit(data:any) {
     this.add.editData(data,dat)
@@ -39,6 +40,11 @@ console.log(this.city)
   }
 
  ngOnInit() {
-  }
+    this.add.showData()
+     .subscribe(res=>{
+       this.city=res
+ console.log(this.city)
+   })
 
+}
 }

@@ -14,15 +14,18 @@ export class SearchComponent{
   constructor(private search: SearchService) { }
 
   searchCity(city:string): void {
-  	
-  	
+  /*	if(city==''){
+      alert('Please enter city value')
+    }
+  	else{*/
   		this.search.getData(city)
-  		.subscribe(data=>{
-  			this.city=data;
-        //console.log(this.city)
+  		.subscribe(res=>{
+  			this.city=res;
+        console.log(this.city)
   			this.receive.emit(this.city);
   		})
   	
   }
 
 }
+
