@@ -1,4 +1,4 @@
-<div class="container list">
+<!-- <div class="container list">
   <h1 class="display-3 text-center">{{city.location.name}}</h1>
   <p class="lead text-center">{{city.location.country}}</p>
   <div class="row">
@@ -16,3 +16,57 @@
     </div>
   </div>
 </div>
+ -->
+<!--Card-->
+<div class="container list">
+  <h1 class="display-3 text-center">{{city.location.name}}</h1>
+  <p class="lead text-center">{{city.location.country}}</p>
+  <div class="row">
+    <div class="col-md-4 text-center mb-5" *ngFor="let data of city.forecast.forecastday">
+      <div class="card testimonial-card">
+        <div class="card-up indigo lighten-1">
+        </div>
+        <div class="avatar"><img src="{{data.day.condition.icon}}" class="rounded-circle">
+        </div>
+        <div class="card-body">
+          <h4 class="card-title">Date: {{data.date}}</h4>
+          <p class="card-text">Max. Temp : {{data.day.maxtemp_c}}&deg;C</p>
+          <p class="card-text">Min. Temp : {{data.day.mintemp_c}}&deg;C</p>
+          <p class="card-text">Condition : {{data.day.condition.text}}</p>
+          <button class="btn btn-outline-success my-2 my-sm-0" type="button" (click)="saveData(data,city)">Add to Favourites</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--/.Card-->
+
+<!--   <div class="card-wid col-sm-3 col-md-3 col-lg-3 mt-4" *ngFor="let data of city.forecast.forecastday">
+                    <div class=" card">
+                        
+                            <div  class="card-img-top text-bold">
+                                
+                                <h1 >{{list.weather[0].description}}</h1>
+                                <h3 >{{cityDetail.city.name}}</h3>
+                                <h3 >{{list.dt_txt}}</h3>
+                                <p >
+                                    <span class="temp-value">{{list.main.temp}}</span>
+                                    
+                                    <span class="temp-type">K</span>
+                                </p>
+                            </div>
+                    
+                            <div class="card-block text-bold btn ">
+                                <button type="button" class="add-button btn btn-danger " (click)=Add_Favorite(list,cityDetail.city.name)>Add</button>
+                                <button type="button" class="pull-center btn btn-danger " (click)=Delete(list,cityDetail.city.name)>Add</button>
+                            </div>
+                        
+                    </div>
+           
+                    
+            
+            
+            
+                </div> -->
+
+
