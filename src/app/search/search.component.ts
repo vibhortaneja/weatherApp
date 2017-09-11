@@ -14,10 +14,10 @@ export class SearchComponent{
   constructor(private search: SearchService) { }
 
   searchCity(city:string): void {
-  /*	if(city==''){
+  	if(city==''){
       alert('Please enter city value')
     }
-  	else{*/
+  	else{
   		this.search.getData(city)
   		.subscribe(res=>{
   			this.city=res;
@@ -27,5 +27,6 @@ export class SearchComponent{
   	
   }
 
+}
 }
 

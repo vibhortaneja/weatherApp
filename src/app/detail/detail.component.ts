@@ -15,27 +15,12 @@ export class DetailComponent implements OnInit {
   city:any={};
   constructor(private add: AddService) { }
 
- //   show() {
- //    this.add.showData()
- //     .subscribe(res=>{
- //      this.city=res
- // console.log(this.city)
- //    })
- //   }
-
-/*   edit(data:any) {
-    this.add.editData(data,dat)
-    .subscribe(res=>{
-      this.dat=res
-console.log(this.dat)
-    })
-  }*/
 
    delete(data:any) {
     this.add.deleteedata(data)
     .subscribe(res=>{
-      this.city=res
-console.log(this.city)
+      var index = this.city.indexOf(data)
+      this.city.splice(index,1)
     })
   }
 

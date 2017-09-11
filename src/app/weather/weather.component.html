@@ -1,3 +1,26 @@
-
+  <nav class="navbar navbar-expand-md navbar-light sticky-top">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+    <div class="navBar">
+      <ul class="navbar-nav mr-auto">
+        <!-- <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li> -->
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/search']">Search </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/fav']">Favourites</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/login']">Login </a>
+        </li>
+        
+      </ul>
+      </div>
+    </div>
+  </nav>
 <app-search (receive)="onreceive($event)"></app-search>
 <app-list [city]='city'></app-list>

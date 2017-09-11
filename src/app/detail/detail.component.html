@@ -1,14 +1,11 @@
 <body>
-  <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
+  <nav class="navbar navbar-expand-md navbar-light sticky-top">
     <a class="navbar-brand" href="#">WeatherApp</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
       <ul class="navbar-nav mr-auto">
-        <!-- <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-        </li> -->
         <li class="nav-item">
           <a class="nav-link" [routerLink]="['/fav']">Favorites</a>
         </li>
@@ -19,20 +16,37 @@
           <a class="nav-link" [routerLink]="['/login']">Login </a>
         </li>
       </ul>
-      <!-- <input #name class="form-control mr-sm-2" type="text" placeholder="Search City Name" aria-label="Search"> -->
-      <!-- <button class="btn btn-outline-success my-2 my-sm-0" (click)="searchCity(name.value)" [routerLink]="['/search']">Search </button> -->
     </div>
   </nav>
 </body>
-<div class="container">
+<!-- <div class="container favorites">
   <div class="row">
     <div class="col-md-4 text-center" *ngFor="let data of city">
-      <h2>{{data.date}}</h2>
-      <h2>{{data.mintemp_c}}</h2>
-      <h2>{{data.maxtemp_c}}</h2>
-      <h2>{{data.condition}}</h2>
-      <!-- <button class="btn btn-danger ml-2" (click)="edit(data)">Edit</button> -->
+      <h2>City: {{data.city}}</h2>
+      <h2>Date: {{data.date}}</h2>
+      <h2>MinTemp: {{data.mintemp}}</h2>
+      <h2>MaxTemp: {{data.maxtemp}}</h2>
+      <h2>Condition: {{data.condition}}</h2>
       <button class="btn btn-danger ml-2" (click)="delete(data)">Delete</button>
     </div>
   </div>
+</div> -->
+
+<div class="container favorites">
+  <div class="row">
+    <div class="col-md-4 text-center mb-5" *ngFor="let data of city">
+      <div class="card">
+        <div class="card-body">
+          <h2>City: {{data.city}}</h2>
+          <h2>Date: {{data.date}}</h2>
+          <h2>MinTemp: {{data.mintemp}}</h2>
+          <h2>MaxTemp: {{data.maxtemp}}</h2>
+          <h2>Condition: {{data.condition}}</h2>
+          <button class="btn btn-danger ml-2" (click)="delete(data)">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+
+<!-- <button class="btn btn-danger ml-2" (click)="edit(data)">Edit</button> -->

@@ -11,10 +11,11 @@ export class ListComponent {
 data:any={};
   constructor(private searchService:SearchService) { }
   
-  saveData(data){
+  saveData(data,city){
   	console.log(data)
-  	this.data={"city":data.name,
-  	"county":data.country,
+  	this.data={
+    "city":city.location.name,
+  	"county":city.location.country,
   	"date":data.date,
   	"maxtemp":data.day.maxtemp_c,
   	"mintemp":data.day.mintemp_c,
